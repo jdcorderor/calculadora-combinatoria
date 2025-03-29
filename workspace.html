@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras Dinámicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Estructuras Dinámicas</h1>
+    <hr>
+    <div class="container">
+        <div class="option">
+            <h2>Combinaciones sin repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="ncsr"></label>
+                <label for="r">Número de elementos seleccionados (r): <input type="number" id="rcsr"></label>
+                <button type="button" id="csr">Calcular</button>
+            </form>
+        </div>
+        <div class="option">
+            <h2>Combinaciones con repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="nccr"></label>
+                <label for="r">Número de elementos seleccionados (r): <input type="number" id="rccr"></label>
+                <button type="button" id="ccr">Calcular</button>
+            </form>
+        </div>
+        <div class="option">
+            <h2>Variaciones sin repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="nvsr"></label>
+                <label for="r">Número de elementos seleccionados (r): <input type="number" id="rvsr"></label>
+                <button type="button" id="vsr">Calcular</button>
+            </form>
+        </div>
+        <div class="option">
+            <h2>Variaciones con repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="nvcr"></label>
+                <label for="r">Número de elementos seleccionados (r): <input type="number" id="rvcr"></label>
+                <button type="button" id="vcr">Calcular</button>
+            </form>
+        </div>
+        <div class="option">
+            <h2>Permutaciones sin repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="npsr"></label>
+                <button type="button" id="psr">Calcular</button>
+            </form>
+        </div>
+        <div class="option">
+            <h2>Permutaciones con repetición</h2>
+            <form action="submit">
+                <label for="n">Total de elementos (n): <input type="number" id="npcr"></label>
+                <div id="repeticiones_elementos"></div>
+                <button type="button" onclick="agregar_repeticiones_elementos()" id="agregarelemento">Agregar repeticiones por elemento</button>
+                <button type="button" id="pcr">Calcular</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div id="footer">
+        Desarrollado por Juan Diego Cordero
+    </div>
+    <script>
+        function agregar_repeticiones_elementos() {
+            const contenedor = document.getElementById('repeticiones_elementos');
+            if (!contenedor.firstChild) {
+                const label = document.createElement('label');
+                label.innerHTML = 'Repeticiones por elemento (n<sub>k</sub>):';
+                contenedor.appendChild(label);
+            }
+            const input = document.createElement('input');
+            input.id = 'elemento';
+            input.type = 'number';
+            contenedor.appendChild(input);
+            contenedor.appendChild(document.createElement('br'));
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
